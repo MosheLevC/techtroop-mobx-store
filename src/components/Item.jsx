@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { observer } from "mobx-react";
 
 class Item extends Component {
-  checkItem = () => {
-    const { item } = this.props;
-    item.completed = !item.completed;
+  checkItem = (e) => {
+    this.props.store.checkItem(e.target.value);
   };
   editItem = () => {
     //your code here
@@ -15,8 +14,8 @@ class Item extends Component {
   render() {
     let item = this.props.item;
     return (
-      <div className={item.completed ? "crossed" : ""}>
-        <input type="checkbox" checked={item.completed} onChange={this.checkItem} />
+      <div className={item.completed ? "crossed" : null}>
+        <input type="checkbox" onClick={this.checkItem} value={item.name} />
         {item.name}
       </div>
     );
