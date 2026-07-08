@@ -21,8 +21,9 @@ export class ShoppingList {
   addItem = (name) => {
     this.list.push(new Item(name));
   };
-  editItem = () => {
-    // your code here
+  editItem = (name, location) => {
+    let item = this.list.find((i) => i.name === name);
+    item.location = location;
   };
   deleteItem = () => {
     // your code here

@@ -6,7 +6,8 @@ class Item extends Component {
     this.props.store.checkItem(e.target.value);
   };
   editItem = () => {
-    //your code here
+    let location = prompt("what's the new location?");
+    this.props.store.editItem(this.props.item.name, location);
   };
   deleteItem = () => {
     //your code here
@@ -17,6 +18,9 @@ class Item extends Component {
       <div className={item.completed ? "crossed" : null}>
         <input type="checkbox" onClick={this.checkItem} value={item.name} />
         {item.name} {item.location}
+        <button className="editButton" onClick={this.editItem}>
+          edit
+        </button>
       </div>
     );
   }
