@@ -11,14 +11,15 @@ export class ShoppingList {
       list: observable,
       length: observable,
       checkItem: action,
+      addItem: action,
     });
   }
   checkItem = (name) => {
     let item = this.list.find((i) => i.name === name);
     item.completed = !item.completed;
   };
-  addItem = () => {
-    // your code here
+  addItem = (name) => {
+    this.list.push(new Item(name));
   };
   editItem = () => {
     // your code here
