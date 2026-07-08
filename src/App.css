@@ -1,3 +1,10 @@
 .crossed {
-  text-decoration: line-through
+  text-decoration: line-through;
+}
+.editButton {
+  margin-left: 10px;
+}
+.deleteButton {
+  margin-left: 10px;
+  background-color: red;
 }

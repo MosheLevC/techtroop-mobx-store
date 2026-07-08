@@ -10,7 +10,7 @@ class Item extends Component {
     this.props.store.editItem(this.props.item.name, location);
   };
   deleteItem = () => {
-    //your code here
+    this.props.store.deleteItem(this.props.item.name);
   };
   render() {
     let item = this.props.item;
@@ -20,6 +20,9 @@ class Item extends Component {
         {item.name} {item.location}
         <button className="editButton" onClick={this.editItem}>
           edit
+        </button>
+        <button className="deleteButton" onClick={this.deleteItem}>
+          delete
         </button>
       </div>
     );

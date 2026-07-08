@@ -25,7 +25,8 @@ export class ShoppingList {
     let item = this.list.find((i) => i.name === name);
     item.location = location;
   };
-  deleteItem = () => {
-    // your code here
+  deleteItem = (name) => {
+    let updatedList = this.list.filter((i) => i.name !== name);
+    this.list = updatedList;
   };
 }
